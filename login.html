@@ -60,12 +60,12 @@
                   <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
               </div>
             <!-- 第二行 密码 -->
-            <div class="layui-form-item">            
-                <input type="password" name="password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            <div class="layui-form-item origin">            
+                <input type="password" name="password" required  lay-verify="required|len" placeholder="请输入密码" autocomplete="off" class="layui-input pwd">
             </div>
             <!-- 第三行 重复密码 -->
-            <div class="layui-form-item">            
-                <input type="password" required  lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+            <div class="layui-form-item repeat">            
+                <input type="password" required  lay-verify="required|len|same" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
             </div>
             <!-- 第四行 按钮 -->
             <div class="layui-form-item">            
