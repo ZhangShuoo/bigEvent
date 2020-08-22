@@ -2,7 +2,8 @@
 function getUserInfo() {
     // 发送ajax请求 获取用户信息 (必须先登录 保证本地存储有token)
     $.ajax({
-        url: 'http://ajax.frontend.itheima.net/my/userinfo',
+        url: '/my/userinfo',
+        // ajax请求成功后触发
         success: function (res) {
             console.log(res);
             if (res.status === 0) {
@@ -21,11 +22,21 @@ function getUserInfo() {
                     $('.text-avatar').text(first).css('display','inline-block');
                 }
 
-            }
+            } 
         },
-        headers: {
-            Authorization: localStorage.getItem('token')
-        }
+        // ajax请求完成后触发
+        // complete: function (xhr) {
+        //     if (xhr.reponseJSON && xhr.reponseJSON.status === 1) {
+        //         // 说明token无效
+        //         // 1. 删除无效token
+        //         localStorage.removeItem('token');
+        //         // 2. 跳转登录页面
+        //         location.href = '/login.html';
+        //     }
+        // },
+        // headers: {
+        //     Authorization: localStorage.getItem('token')
+        // }
     });
 }
 getUserInfo();
