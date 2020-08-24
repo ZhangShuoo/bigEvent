@@ -1,0 +1,12 @@
+/* 通用的css样式 */
+body{
+    background-color: #f2f3f5;
+}
+
+.layui-card {
+    margin: 25px;
+}
+/* 当前页面样式 */
+.layui-form {
+    width: 500px;
+}
