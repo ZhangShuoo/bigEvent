@@ -1,0 +1,11 @@
+# 井号是注释
+
+# git的忽略文件
+
+# 设置node_modules文件为忽略文件
+node_modules
+
+# 设置 package-lock.json为忽略文件
+package-lock.json
+
+iframe.html
