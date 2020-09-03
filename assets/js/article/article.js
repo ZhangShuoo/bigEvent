@@ -109,3 +109,25 @@ $('#search').on('submit', function (e) {
     data.pagenum = 1;
     renderArticle();
 })
+
+// ------------------- 删除功能 ----------------------------------------
+$('body').on('click', 'button:contains("删除")', function () {
+    // 获取id
+    var id = $(this).data('id');
+    // console.log(id);
+    layer.confirm('你确定删除吗？', function (index) {
+
+        $.ajax({
+            url: '/my/article/delete/' + id,
+            success: function (res) {
+                layer.msg(res.message);
+                if (res.status === 0) {
+                    // 删除成功，重新渲染
+                    renderArticle();
+                }
+            }
+        })
+
+        layer.close(index);
+    });
+});

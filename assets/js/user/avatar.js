@@ -3,14 +3,14 @@
 // 1.1 找到默认的图片
 var $image = $('#image');
 // 1.2 配置剪裁框
-var option = {
+var options = {
     // 纵横比
     aspectRatio: 1, //正方形
     // 指定预览区 (使用选择器)
     preview: '.img-preview'
 };
 // 1.3 实现剪裁框
-$image.cropper(option);
+$image.cropper(options);
 
 
 // ----------------------点击上传按钮 能够选择图片---------------------------
@@ -30,9 +30,8 @@ $('#file').change(function () {
     var url = URL.createObjectURL(fileobj);
     // console.log(url);
     // 更换图片的src属性(销毁剪裁区  更换src属性  重新创建剪裁框)
-    $image.cropper('destory');
-    $image.attr('src', url);
-    $image.cropper(option);
+    $image.cropper('destroy').attr('src', url).cropper(options);
+
 
     // $image.cropper('destory').attr('src', url).cropper(option);
 
