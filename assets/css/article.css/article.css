@@ -1,0 +1,12 @@
+body{
+    background-color: #f2f3f5;
+}
+.layui-card {
+    margin: 20px;
+}
+/* 标题区 */
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
